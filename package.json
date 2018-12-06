@@ -1,0 +1,36 @@
+{
+  "name": "@tadashi/flatten-object",
+  "version": "1.0.0",
+  "description": "Flattens object a single level deep",
+  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "pretest": "xo",
+    "test": "ava"
+  },
+  "keywords": [
+    "flatten",
+    "object",
+    "level",
+    "deep"
+  ],
+  "author": "Thiago Lagden",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.1"
+  },
+  "devDependencies": {
+    "ava": "0.25.0",
+    "xo": "0.23.0"
+  },
+  "xo": {
+    "envs": [
+      "node"
+    ],
+    "semicolon": false
+  }
+}
