@@ -24,7 +24,7 @@ function _(child, separator, _path = []) {
  * Achata o objeto
  *
  * @param {object} object        - objeto que será achatado
- * @param {string} separator    - caractere separador das chaves
+ * @param {string} separator     - caractere separador das chaves
  * @returns {object} Retorna objeto achatado
  */
 function flattenDeepObject(object, separator = '.') {
