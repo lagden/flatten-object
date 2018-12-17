@@ -26,3 +26,15 @@ test('separator', t => {
 	}, '__')
 	t.is(JSON.stringify(flat), '{"a__b__c":"foo","a__d":"bar"}')
 })
+
+test('array', t => {
+	const flat = flatten({
+		a: {
+			b: {
+				c: ['x', 'y', {z: 'foo'}]
+			},
+			d: 'bar'
+		}
+	}, '__')
+	t.is(JSON.stringify(flat), '{"a__b__c":["x","y",{"z":"foo"}],"a__d":"bar"}')
+})
