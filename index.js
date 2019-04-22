@@ -18,6 +18,7 @@ function flattenObject(obj, delim = '.') {
 			nobj[key] = val
 		}
 	}
+
 	return nobj
 }
 
