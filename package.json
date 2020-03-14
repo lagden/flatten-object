@@ -24,13 +24,18 @@
     "node": ">=8.9.1"
   },
   "devDependencies": {
-    "ava": "1.4.1",
-    "xo": "0.24.0"
+    "ava": "3.5.0",
+    "xo": "0.28.0"
   },
   "xo": {
     "envs": [
       "node"
     ],
-    "semicolon": false
+    "semicolon": false,
+    "rules": {
+      "padding-line-between-statements": 0,
+      "unicorn/prevent-abbreviations": 0,
+      "capitalized-comments": 0
+    }
   }
 }

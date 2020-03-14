@@ -1,7 +1,7 @@
 'use strict'
 
-import test from 'ava'
-import flatten from '..'
+const test = require('ava')
+const flatten = require('..')
 
 test('basic', t => {
 	const flat = flatten({
