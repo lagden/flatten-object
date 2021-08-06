@@ -1,40 +1,59 @@
-'use strict'
-
-const test = require('ava')
-const flatten = require('..')
+import test from 'ava'
+import flatten from '../index.js'
 
 test('basic', t => {
 	const flat = flatten({
 		a: {
 			b: {
-				c: 'foo'
+				c: 'foo',
 			},
-			d: 'bar'
-		}
+			d: 'bar',
+		},
 	})
-	t.is(JSON.stringify(flat), '{"a.b.c":"foo","a.d":"bar"}')
+	t.snapshot(JSON.stringify(flat, undefined, '  '))
 })
 
 test('separator', t => {
 	const flat = flatten({
 		a: {
 			b: {
-				c: 'foo'
+				c: 'foo',
 			},
-			d: 'bar'
-		}
+			d: 'bar',
+		},
 	}, '__')
-	t.is(JSON.stringify(flat), '{"a__b__c":"foo","a__d":"bar"}')
+	t.snapshot(JSON.stringify(flat, undefined, '  '))
 })
 
 test('array', t => {
 	const flat = flatten({
 		a: {
 			b: {
-				c: ['x', 'y', {z: 'foo'}]
+				c: [
+					'x',
+					'y',
+					{
+						z: {
+							y: 'bar',
+						},
+					},
+				],
 			},
-			d: 'bar'
-		}
+			d: 'bar',
+		},
 	}, '__')
-	t.is(JSON.stringify(flat), '{"a__b__c":["x","y",{"z":"foo"}],"a__d":"bar"}')
+	t.snapshot(JSON.stringify(flat, undefined, '  '))
+})
+
+test('null', t => {
+	const flat = flatten({
+		a: {
+			b: {
+				c: 'foo',
+			},
+			x: null,
+			d: 'bar',
+		},
+	})
+	t.snapshot(JSON.stringify(flat, undefined, '  '))
 })

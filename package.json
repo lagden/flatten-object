@@ -1,16 +1,16 @@
 {
   "name": "@tadashi/flatten-object",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Flattens object a single level deep",
+  "type": "module",
   "main": "index.js",
   "files": [
     "LICENSE",
     "README.md"
   ],
   "scripts": {
-    "report": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "xo",
-    "test": "ava"
+    "test": "c8 --reporter=text --reporter=lcov ava"
   },
   "keywords": [
     "flatten",
@@ -21,15 +21,19 @@
   "author": "Thiago Lagden",
   "license": "MIT",
   "engines": {
-    "node": ">=8.9.1"
+    "node": ">=14.16.0"
   },
   "devDependencies": {
-    "ava": "3.10.1",
-    "xo": "0.32.1"
+    "ava": "3.15.0",
+    "xo": "0.43.0",
+    "c8": "7.8.0"
   },
   "xo": {
     "envs": [
       "node"
+    ],
+    "ignore": [
+      "bin/**/*.*"
     ],
     "semicolon": false,
     "rules": {

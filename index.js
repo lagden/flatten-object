@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  * Achata o `objeto` em um único nível.
  *
@@ -10,7 +8,7 @@
 function flattenObject(obj, delim = '.') {
 	const nobj = Object.create(null)
 	for (const [key, val] of Object.entries(obj)) {
-		if (typeof val === 'object' && Array.isArray(val) === false) {
+		if (typeof val === 'object' && val !== null && Array.isArray(val) === false) {
 			for (const [k, v] of Object.entries(flattenObject(val, delim))) {
 				nobj[key + delim + k] = v
 			}
@@ -22,4 +20,4 @@ function flattenObject(obj, delim = '.') {
 	return nobj
 }
 
-module.exports = flattenObject
+export default flattenObject
