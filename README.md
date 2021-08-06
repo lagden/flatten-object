@@ -29,7 +29,7 @@ $ npm i -S @tadashi/flatten-object
 ## Usage
 
 ```js
-const flatten = require('@tadashi/flatten-object')
+import flatten from '@tadashi/flatten-object'
 
 const flat = flatten({
   a: {
@@ -45,4 +45,4 @@ const flat = flatten({
 
 ## License
 
-MIT © [Thiago Lagden](http://lagden.in)
+MIT © [Thiago Lagden](https://github.com/lagden)
