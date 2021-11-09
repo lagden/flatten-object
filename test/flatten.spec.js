@@ -1,5 +1,13 @@
 import test from 'ava'
+import timekeeper from 'timekeeper'
 import flatten from '../src/flatten.js'
+
+test.before(() => {
+	// Para o tempo
+	timekeeper.freeze(1_604_416_038 * 1000)
+})
+
+test.after(timekeeper.reset)
 
 test('basic', t => {
 	const flat = flatten({
