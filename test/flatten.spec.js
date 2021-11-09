@@ -1,5 +1,5 @@
 import test from 'ava'
-import flatten from '../index.js'
+import flatten from '../src/flatten.js'
 
 test('basic', t => {
 	const flat = flatten({
@@ -16,6 +16,7 @@ test('basic', t => {
 test('separator', t => {
 	const flat = flatten({
 		a: {
+			e: /\D/g,
 			b: {
 				c: 'foo',
 			},
@@ -25,9 +26,10 @@ test('separator', t => {
 	t.snapshot(JSON.stringify(flat, undefined, '  '))
 })
 
-test('array', t => {
+test('array and date', t => {
 	const flat = flatten({
 		a: {
+			e: new Date(2021, 8, 1, 0, 0, 0),
 			b: {
 				c: [
 					'x',

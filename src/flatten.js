@@ -1,3 +1,14 @@
+function _verify(val) {
+	const test = [
+		typeof val === 'object',
+		val !== null,
+		val instanceof Date === false,
+		val instanceof RegExp === false,
+		Array.isArray(val) === false,
+	]
+	return test.every(v => v)
+}
+
 /**
  * Achata o `objeto` em um único nível.
  *
@@ -8,7 +19,7 @@
 function flattenObject(obj, delim = '.') {
 	const nobj = Object.create(null)
 	for (const [key, val] of Object.entries(obj)) {
-		if (typeof val === 'object' && val !== null && Array.isArray(val) === false) {
+		if (_verify(val)) {
 			for (const [k, v] of Object.entries(flattenObject(val, delim))) {
 				nobj[key + delim + k] = v
 			}

@@ -1,10 +1,11 @@
 {
   "name": "@tadashi/flatten-object",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Flattens object a single level deep",
   "type": "module",
-  "main": "index.js",
+  "main": "src/flatten.js",
   "files": [
+    "src",
     "LICENSE",
     "README.md"
   ],
@@ -25,8 +26,8 @@
   },
   "devDependencies": {
     "ava": "3.15.0",
-    "xo": "0.43.0",
-    "c8": "7.8.0"
+    "xo": "0.46.4",
+    "c8": "7.10.0"
   },
   "xo": {
     "envs": [
