@@ -8,8 +8,8 @@
 
 [npm-img]:         https://img.shields.io/npm/v/@tadashi/flatten-object.svg
 [npm]:             https://www.npmjs.com/package/@tadashi/flatten-object
-[ci-img]:          https://travis-ci.org/lagden/flatten-object.svg
-[ci]:              https://travis-ci.org/lagden/flatten-object
+[ci-img]:          https://github.com/lagden/flatten-object/actions/workflows/nodejs.yml/badge.svg
+[ci]:              https://github.com/lagden/flatten-object/actions/workflows/nodejs.yml
 [coveralls-img]:   https://coveralls.io/repos/github/lagden/flatten-object/badge.svg?branch=master
 [coveralls]:       https://coveralls.io/github/lagden/flatten-object?branch=master
 [xo-img]:          https://img.shields.io/badge/code_style-XO-5ed9c7.svg
