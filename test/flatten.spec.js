@@ -37,7 +37,7 @@ test('separator', t => {
 test('array and date', t => {
 	const flat = flatten({
 		a: {
-			e: new Date(2021, 8, 1, 0, 0, 0),
+			e: new Date(1_518_375_593_748),
 			b: {
 				c: [
 					'x',
